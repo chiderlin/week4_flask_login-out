@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>登入驗證練習</title>
+        <style>
+            body{margin:0;}
+            header{
+                background-color: #003D79;
+                height:80px;
+            }
+            header{
+                margin:0;
+                color:white;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            header h3{
+                flex:none;
+            }
+            .content{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .content div{
+               text-align: center; 
+            }
+            #account{margin:5px;}
+            #password{margin:5px;}
+            button{margin:5px;}
+            input{width:150px;}
+        </style>
+    </head>
+    <body>
+        <header>
+            {% block head %}
+            {% endblock %}
+        </header>
+        <main>
+            <div class="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </main>
+    </body>
+</html>

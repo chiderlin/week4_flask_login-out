@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block head %}
+<h3>歡迎光臨，請輸入帳號密碼</h3>
+{% endblock %}
+
+{% block content %}
+
+<div>
+    <h3>登入系統</h3>
+    <form action="/signin" method="post">
+        <div id="account">
+            <label for="account">帳號</label>
+            <input type="text" name="account" id="account" required="required">
+        </div>
+        <div id="password">
+            <label for="password">密碼</label>
+            <input type="password" name="password" id="password" required="required">
+        </div>
+        <button type="submit">登入</button>
+    </form>
+</div>
+{% endblock %}
