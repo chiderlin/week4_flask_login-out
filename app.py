@@ -21,9 +21,9 @@ def signin():
 
 @app.route("/member/", methods=["GET"])
 def member():
-    if session["account"] == None: # 如果目前是未登入狀態就不能到/member網址
+    if session.get("account") == None: # 如果目前是未登入狀態就不能到/member網址
         return redirect("/")
-    elif session["account"] and session["password"] != "test":
+    elif session.get("account") and session.get("password") != "test":
         return redirect("/")
     else:
         return render_template("member.html")
@@ -31,7 +31,7 @@ def member():
 
 @app.route("/error/", methods=["GET"])
 def error():
-    if session["account"] == None:
+    if session.get("account") == None:
         return redirect("/")
     else:
         return render_template("error.html")
@@ -39,8 +39,8 @@ def error():
 
 @app.route("/signout", methods=["GET"])
 def signout():
-    session["account"] = None
-    session["password"] = None
+    session.pop("account", None)
+    session.pop("password", None)
     return redirect("/")
 
 
